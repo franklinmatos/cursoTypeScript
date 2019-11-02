@@ -158,3 +158,31 @@ console.log(nota);
 
 nota = 'nota 10';
 console.log(nota);
+
+//  checando tipos no runtime
+if (typeof nota === 'number') {
+  console.log('O tipo passado é do tipo number');
+} else {
+  console.log(typeof nota);
+}
+
+// função never
+function falha(message: string): never {
+  throw new Error(message);
+}
+// gerando um excessão em alguma regra...
+const produto = {
+  id: 54,
+  nome: 'Sabão em pó',
+  preco: -1,
+  validarProduto() {
+    if (!this.nome || this.nome.trim().length == 0) {
+      falha('Produto Inválido');
+    }
+    if (this.preco <= 0) {
+      falha('Valor inválido para o produto');
+    }
+  },
+};
+
+produto.validarProduto();
