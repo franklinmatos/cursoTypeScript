@@ -117,3 +117,8 @@ var novoFuncionario = {
 console.log(novoFuncionario.supervisores);
 console.log(novoFuncionario.baterPonto(10));
 console.log(novoFuncionario.baterPonto(7));
+// union types
+var nota = 10;
+console.log(nota);
+nota = 'nota 10';
+console.log(nota);
