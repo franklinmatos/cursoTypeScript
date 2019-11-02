@@ -2,7 +2,7 @@
 var variavel = false;
 console.log('O valor da variavel boolean é: ' + variavel);
 // string
-var nome = "O nome dela é Jenifer!!";
+var nome = 'O nome dela é Jenifer!!';
 console.log(nome);
 // se tentar inserir um valor inteiro numa variável string o compitador mesmo barra
 // nome = 1890+30
@@ -11,7 +11,18 @@ console.log(nome);
 var idade = 27;
 console.log('A idade atribuida é: ' + idade);
 console.log(typeof idade);
-var hobbies = ["Ler", "Correr", "Estudar", "Correr", "Namorar"];
+var hobbies = [
+    'Ler',
+    'Correr',
+    'Estudar',
+    'Correr',
+    'Namorar',
+    'Namorar',
+    'Namorar',
+    'Namorar',
+    'Namorar',
+    'Namorar',
+];
 console.log(hobbies);
 for (var _i = 0, hobbies_1 = hobbies; _i < hobbies_1.length; _i++) {
     var key = hobbies_1[_i];
@@ -39,7 +50,7 @@ var cor;
 console.log(cor.Red);
 var naoTenhoCerteza = 4;
 console.log(naoTenhoCerteza);
-naoTenhoCerteza = "maybe a string instead";
+naoTenhoCerteza = 'maybe a string instead';
 console.log(naoTenhoCerteza);
 naoTenhoCerteza = false; // okay, definitely a boolean
 console.log(naoTenhoCerteza);
@@ -50,7 +61,7 @@ function retornaMeuNome() {
 }
 console.log(retornaMeuNome());
 function digaOi() {
-    console.log("Diga Oi.");
+    console.log('Diga Oi.');
 }
 digaOi();
 // função que recebe 2 números do tipo number e retorna um number como resultadl
@@ -82,13 +93,27 @@ var funcionario = {
     supervisores: ['Ana', 'Paulo'],
     baterPonto: function (horario) {
         if (horario <= 8) {
-            return "Ponto Normal";
+            return 'Ponto Normal';
         }
         else {
-            return "Fora do Horário!";
+            return 'Fora do Horário!';
         }
     }
 };
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(10));
 console.log(funcionario.baterPonto(7));
+var novoFuncionario = {
+    supervisores: ['Joana', 'Mário'],
+    baterPonto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto Normal';
+        }
+        else {
+            return 'Fora do Horário!';
+        }
+    }
+};
+console.log(novoFuncionario.supervisores);
+console.log(novoFuncionario.baterPonto(10));
+console.log(novoFuncionario.baterPonto(7));
