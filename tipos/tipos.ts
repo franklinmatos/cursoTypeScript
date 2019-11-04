@@ -206,3 +206,30 @@ console.log(JSON.stringify(contato1));
 let podeSerNulo = null;
 console.log(podeSerNulo);
 console.log(typeof podeSerNulo);
+
+type contaBancaria = {
+  saldo: number;
+  depositar: (valor: number) => void;
+};
+// desafio aula tipos
+let contaBancaria: contaBancaria = {
+  saldo: 3456,
+  depositar(valor: number) {
+    this.saldo += valor;
+  },
+};
+
+type correntista = {
+  nome: string;
+  contaBancaria: contaBancaria;
+  contatos: String[];
+};
+
+let correntista = {
+  nome: 'Ana Silva',
+  contaBancaria: contaBancaria,
+  contatos: ['34567890', '98765432'],
+};
+
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
