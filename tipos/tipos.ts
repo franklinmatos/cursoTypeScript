@@ -174,7 +174,7 @@ function falha(message: string): never {
 const produto = {
   id: 54,
   nome: 'Sabão em pó',
-  preco: -1,
+  preco: 10,
   validarProduto() {
     if (!this.nome || this.nome.trim().length == 0) {
       falha('Produto Inválido');
@@ -186,3 +186,23 @@ const produto = {
 };
 
 produto.validarProduto();
+
+type contato = {
+  nome: string;
+  idade: number | null;
+  telefone: string | null;
+};
+
+let contato1: contato = {
+  nome: 'Franklin M. Correia',
+  idade: null,
+  telefone: null,
+};
+
+console.log(contato1);
+console.log(JSON.stringify(contato1));
+
+// ao se atribuir esse valor a variaval assume o tipo any
+let podeSerNulo = null;
+console.log(podeSerNulo);
+console.log(typeof podeSerNulo);

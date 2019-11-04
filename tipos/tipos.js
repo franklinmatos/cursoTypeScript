@@ -133,10 +133,11 @@ else {
 function falha(message) {
     throw new Error(message);
 }
+// gerando um excessão em alguma regra...
 var produto = {
     id: 54,
     nome: 'Sabão em pó',
-    preco: -1,
+    preco: 10,
     validarProduto: function () {
         if (!this.nome || this.nome.trim().length == 0) {
             falha('Produto Inválido');
@@ -147,3 +148,14 @@ var produto = {
     }
 };
 produto.validarProduto();
+var contato1 = {
+    nome: 'Franklin M. Correia',
+    idade: null,
+    telefone: null
+};
+console.log(contato1);
+console.log(JSON.stringify(contato1));
+// ao se atribuir esse valor a variaval assume o tipo any
+var podeSerNulo = null;
+console.log(podeSerNulo);
+console.log(typeof podeSerNulo);
