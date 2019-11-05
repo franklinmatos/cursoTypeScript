@@ -10,6 +10,6 @@ if (estaFrio) {
 }
 // definindo uma constante e tentando alterar valor
 const cpf: string = '123.456.789.98';
-cpf = '997.345.432-66';
+// cpf = '997.345.432-66';
 
 console.log(cpf);
