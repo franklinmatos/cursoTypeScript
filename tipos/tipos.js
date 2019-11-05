@@ -1,3 +1,4 @@
+"use strict";
 // boolean
 var variavel = false;
 console.log('O valor da variavel boolean é: ' + variavel);
@@ -73,12 +74,12 @@ console.log(multiplicar(10.2, 5));
 // definição de objeto
 var pessoa = {
     nome: 'Maria Antônia',
-    idade: 26
+    idade: 26,
 };
 console.log(pessoa);
 pessoa = {
     idade: 55,
-    nome: 'José de Almeida'
+    nome: 'José de Almeida',
 };
 console.log(pessoa);
 //  Desafio
@@ -98,7 +99,7 @@ var funcionario = {
         else {
             return 'Fora do Horário!';
         }
-    }
+    },
 };
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(10));
@@ -112,7 +113,7 @@ var novoFuncionario = {
         else {
             return 'Fora do Horário!';
         }
-    }
+    },
 };
 console.log(novoFuncionario.supervisores);
 console.log(novoFuncionario.baterPonto(10));
@@ -145,13 +146,13 @@ var produto = {
         if (this.preco <= 0) {
             falha('Valor inválido para o produto');
         }
-    }
+    },
 };
 produto.validarProduto();
 var contato1 = {
     nome: 'Franklin M. Correia',
     idade: null,
-    telefone: null
+    telefone: null,
 };
 console.log(contato1);
 console.log(JSON.stringify(contato1));
@@ -163,13 +164,14 @@ console.log(typeof podeSerNulo);
 var contaBancaria = {
     saldo: 3456,
     depositar: function (valor) {
-        return (this.saldo += valor);
-    }
+        this.saldo += valor;
+    },
 };
 var correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
-    contatos: ['34567890', '98765432']
+    contatos: ['34567890', '98765432'],
 };
 correntista.contaBancaria.depositar(3000);
 console.log(correntista);
+//# sourceMappingURL=tipos.js.map
