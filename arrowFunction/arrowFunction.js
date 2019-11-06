@@ -1,4 +1,3 @@
-var _this = this;
 console.log('-------------- Arrow Function --------------');
 //  Arrow Function
 var somar = function (n1, n2) {
@@ -14,15 +13,40 @@ saudacao();
 var falarCom = function (pessoa) { return console.log('Olá ' + pessoa); };
 falarCom('Antônio');
 // this
-function normalComThis() {
-    console.log(this);
+// function normalComThis() {
+//   console.log(this);
+// }
+// normalComThis();
+// const normalComThisEspecial = normalComThis.bind({ nome: 'Ana' });
+// normalComThisEspecial();
+// // this??
+// console.log(this);
+// const arrowComThis = () => console.log(this);
+// arrowComThis();
+// const arrowComThisEspecial = arrowComThis.bind({ nome: 'Ana' });
+// arrowComThisEspecial();
+// parametro padrao
+function contagemRegressiva(inicio) {
+    if (inicio === void 0) { inicio = 3; }
+    console.log(inicio);
+    while (inicio > 0) {
+        inicio--;
+        console.log('valor atual =>' + inicio);
+    }
+    console.log('valor final =>' + inicio);
 }
-normalComThis();
-var normalComThisEspecial = normalComThis.bind({ nome: 'Ana' });
-normalComThisEspecial();
-// this??
-console.log(this);
-var arrowComThis = function () { return console.log(_this); };
-arrowComThis();
-var arrowComThisEspecial = arrowComThis.bind({ nome: 'Ana' });
-arrowComThisEspecial();
+contagemRegressiva();
+contagemRegressiva(10);
+function contagemRegressivaMelhorado(inicio, fim) {
+    if (inicio === void 0) { inicio = 5; }
+    fim = inicio - 1;
+    console.log('inicio ' + inicio);
+    console.log('fim ' + fim);
+    while (inicio > fim) {
+        inicio--;
+        console.log('valor atual =>' + inicio);
+    }
+    console.log('FIM');
+}
+contagemRegressivaMelhorado(5, 1);
+contagemRegressivaMelhorado(10, 0);

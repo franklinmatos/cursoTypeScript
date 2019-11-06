@@ -21,18 +21,45 @@ falarCom('Antônio');
 
 // this
 
-function normalComThis() {
-  console.log(this);
+// function normalComThis() {
+//   console.log(this);
+// }
+// normalComThis();
+
+// const normalComThisEspecial = normalComThis.bind({ nome: 'Ana' });
+// normalComThisEspecial();
+
+// // this??
+// console.log(this);
+// const arrowComThis = () => console.log(this);
+// arrowComThis();
+
+// const arrowComThisEspecial = arrowComThis.bind({ nome: 'Ana' });
+// arrowComThisEspecial();
+
+// parametro padrao
+
+function contagemRegressiva(inicio: number = 3): void {
+  console.log(inicio);
+  while (inicio > 0) {
+    inicio--;
+    console.log('valor atual =>' + inicio);
+  }
+  console.log('valor final =>' + inicio);
 }
-normalComThis();
 
-const normalComThisEspecial = normalComThis.bind({ nome: 'Ana' });
-normalComThisEspecial();
+contagemRegressiva();
+contagemRegressiva(10);
 
-// this??
-console.log(this);
-const arrowComThis = () => console.log(this);
-arrowComThis();
-
-const arrowComThisEspecial = arrowComThis.bind({ nome: 'Ana' });
-arrowComThisEspecial();
+function contagemRegressivaMelhorado(inicio: number = 5, fim: number): void {
+  fim = inicio - 1;
+  console.log('inicio ' + inicio);
+  console.log('fim ' + fim);
+  while (inicio > fim) {
+    inicio--;
+    console.log('valor atual =>' + inicio);
+  }
+  console.log('FIM');
+}
+contagemRegressivaMelhorado(5, 1);
+contagemRegressivaMelhorado(10, 0);
