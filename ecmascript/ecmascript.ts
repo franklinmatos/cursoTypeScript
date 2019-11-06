@@ -13,3 +13,26 @@ const cpf: string = '123.456.789.98';
 // cpf = '997.345.432-66';
 
 console.log(cpf);
+
+//escopo de variáveis
+let segredo = 'externo';
+function revelar() {
+  let segredo = 'interno';
+  console.log(segredo);
+}
+revelar();
+console.log(segredo);
+
+{
+  {
+    const def = 'def';
+    console.log(def);
+  }
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+// com o uso do let não é permitido acessar a variável de fora do escopo
+// com var o acesso ocorre sem problemas.
+// console.log(i);
