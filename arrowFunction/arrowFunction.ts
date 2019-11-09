@@ -96,9 +96,9 @@ function tuplaParam1(a: number, b: string, c: boolean): void {
 }
 tuplaParam1(...tupla)
 
-function tuplaPram2(...params: [number, string, boolean]) {
+function tuplaPram2(...params: [number, string, boolean]): void {
   console.log(Array.isArray(params))
-  console.log(`2 ${params[0]} ${params[1]} ${params[2]}`)
+  console.log(`2) ${params[0]} ${params[1]} ${params[2]} `)
 }
 
 tuplaPram2(...tupla)
