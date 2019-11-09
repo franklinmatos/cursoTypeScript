@@ -1,12 +1,12 @@
 console.log('-------------- Arrow Function --------------');
 //  Arrow Function
 
-const somar = function(n1: number, n2: number): number {
+const somar = function (n1: number, n2: number): number {
   return n1 + n2;
 };
 console.log(somar(2, 1));
 
-const subitrair = function(n1: number, n2: number): number {
+const subitrair = function (n1: number, n2: number): number {
   return n1 - n2;
 };
 
@@ -51,7 +51,7 @@ function contagemRegressiva(inicio: number = 3): void {
 contagemRegressiva();
 contagemRegressiva(10);
 
-function contagemRegressivaMelhorado(inicio: number = 5, fim: number): void {
+function contagemRegressivaMelhorado(inicio: number = 5, fim: number = 1): void {
   fim = inicio - 1;
   console.log('inicio ' + inicio);
   console.log('fim ' + fim);
@@ -62,4 +62,43 @@ function contagemRegressivaMelhorado(inicio: number = 5, fim: number): void {
   console.log('FIM');
 }
 contagemRegressivaMelhorado(5, 1);
-contagemRegressivaMelhorado(10, 0);
+contagemRegressivaMelhorado(10);
+
+// Rest & Spread
+const numbers = [10, 20, 50, 2, 2343, 3243, 1599, 1200, 123];
+console.log(Math.max(...numbers));
+
+const turmaA: string[] = ['João', 'Maria', 'Poliana'];
+console.log(turmaA);
+
+const turmaB: string[] = [
+  'Lucas',
+  'Miguel',
+  'Fernando',
+  'Marcos',
+  'Antonio',
+  ...turmaA,
+];
+console.log(turmaB);
+
+function retornaArray(...args: number[]) {
+  return args;
+}
+const numeros = retornaArray(10, 20, 30, 40, 50, 60, 90, 80, 66);
+console.log(numeros);
+console.log(retornaArray(...numbers, ...numeros));
+
+// Rest & Spread (tupla )
+const tupla: [number, string, boolean] = [1, 'abc', true];
+
+function tuplaParam1(a: number, b: string, c: boolean): void {
+  console.log(`1)  ${a} ${b} ${c} `);
+}
+tuplaParam1(...tupla)
+
+function tuplaPram2(...params: [number, string, boolean]) {
+  console.log(Array.isArray(params))
+  console.log(`2 ${params[0]} ${params[1]} ${params[2]}`)
+}
+
+tuplaPram2(...tupla)

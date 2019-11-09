@@ -39,6 +39,7 @@ contagemRegressiva();
 contagemRegressiva(10);
 function contagemRegressivaMelhorado(inicio, fim) {
     if (inicio === void 0) { inicio = 5; }
+    if (fim === void 0) { fim = 1; }
     fim = inicio - 1;
     console.log('inicio ' + inicio);
     console.log('fim ' + fim);
@@ -49,4 +50,42 @@ function contagemRegressivaMelhorado(inicio, fim) {
     console.log('FIM');
 }
 contagemRegressivaMelhorado(5, 1);
-contagemRegressivaMelhorado(10, 0);
+contagemRegressivaMelhorado(10);
+// Rest & Spread
+var numbers = [10, 20, 50, 2, 2343, 3243, 1599, 1200, 123];
+console.log(Math.max.apply(Math, numbers));
+var turmaA = ['João', 'Maria', 'Poliana'];
+console.log(turmaA);
+var turmaB = [
+    'Lucas',
+    'Miguel',
+    'Fernando',
+    'Marcos',
+    'Antonio'
+].concat(turmaA);
+console.log(turmaB);
+function retornaArray() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    return args;
+}
+var numeros = retornaArray(10, 20, 30, 40, 50, 60, 90, 80, 66);
+console.log(numeros);
+console.log(retornaArray.apply(void 0, numbers.concat(numeros)));
+// Rest & Spread (tupla )
+var tupla = [1, 'abc', true];
+function tuplaParam1(a, b, c) {
+    console.log("1)  " + a + " " + b + " " + c + " ");
+}
+tuplaParam1.apply(void 0, tupla);
+function tuplaPram2() {
+    var params = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        params[_i - 0] = arguments[_i];
+    }
+    console.log(Array.isArray(params));
+    console.log("2 " + params[0] + " " + params[1] + " " + params[2]);
+}
+tuplaPram2.apply(void 0, tupla);
