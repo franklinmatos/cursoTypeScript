@@ -86,6 +86,32 @@ function tuplaPram2() {
         params[_i - 0] = arguments[_i];
     }
     console.log(Array.isArray(params));
-    console.log("2 " + params[0] + " " + params[1] + " " + params[2]);
+    console.log("2) " + params[0] + " " + params[1] + " " + params[2] + " ");
 }
 tuplaPram2.apply(void 0, tupla);
+// Destructuring (array)
+var caracteristicas = ['Motor Speed 6 Marchas', 2014];
+// const motor = caracteristicas[0]
+// const ano = caracteristicas[1]
+// console.log(motor)
+// console.log(ano)
+var motor = caracteristicas[0], ano = caracteristicas[1];
+console.log(motor);
+console.log(ano);
+// Destructuring (objeto)
+var item = {
+    nome: 'SSD 480GB',
+    preco: 389,
+    caracteristicas: {
+        w: 'Importado'
+    }
+};
+console.log(item);
+var nomeItem = item.nome;
+var precoItem = item.preco;
+console.log(nomeItem);
+console.log(precoItem);
+var n = item.nome, p = item.preco, w = item.caracteristicas.w;
+console.log(n);
+console.log(p);
+console.log(w);

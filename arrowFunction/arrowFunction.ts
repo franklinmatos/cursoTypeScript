@@ -102,3 +102,40 @@ function tuplaPram2(...params: [number, string, boolean]): void {
 }
 
 tuplaPram2(...tupla)
+
+// Destructuring (array)
+
+const caracteristicas = ['Motor Speed 6 Marchas', 2014]
+// const motor = caracteristicas[0]
+// const ano = caracteristicas[1]
+// console.log(motor)
+// console.log(ano)
+
+const [motor, ano] = caracteristicas
+console.log(motor)
+console.log(ano)
+
+// Destructuring (objeto)
+
+const item = {
+  nome: 'SSD 480GB',
+  preco: 389,
+  caracteristicas: {
+    w: 'Importado'
+  }
+}
+
+console.log(item)
+
+const nomeItem = item.nome
+const precoItem = item.preco
+console.log(nomeItem)
+console.log(precoItem)
+
+const {
+  nome: n, preco: p, caracteristicas: { w }
+} = item
+
+console.log(n)
+console.log(p)
+console.log(w)
