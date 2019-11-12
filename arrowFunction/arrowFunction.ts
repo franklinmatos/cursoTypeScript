@@ -139,3 +139,19 @@ const {
 console.log(n)
 console.log(p)
 console.log(w)
+
+// template String
+
+const usuarioID: string = 'SuperteCod3r'
+const notificacoes: string = '29'
+//  string simples
+// const boasVindas = 'Boas Vindas ' + usuarioID +
+//   ' Notificações: ' + notificacoes
+
+// string interpolada
+
+const boasVindas = ` 
+Boas Vindas ${usuarioID},
+Notificações: ${parseInt(notificacoes) > 9 ? '+9' : notificacoes}`
+console.log(boasVindas)
+console.log(`${(1 + 1) * 30}`)

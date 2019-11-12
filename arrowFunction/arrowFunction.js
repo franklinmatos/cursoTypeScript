@@ -115,3 +115,13 @@ var n = item.nome, p = item.preco, w = item.caracteristicas.w;
 console.log(n);
 console.log(p);
 console.log(w);
+// template String
+var usuarioID = 'SuperteCod3r';
+var notificacoes = '29';
+//  string simples
+// const boasVindas = 'Boas Vindas ' + usuarioID +
+//   ' Notificações: ' + notificacoes
+// string interpolada
+var boasVindas = " \nBoas Vindas " + usuarioID + ",\nNotifica\u00E7\u00F5es: " + (parseInt(notificacoes) > 9 ? '+9' : notificacoes);
+console.log(boasVindas);
+console.log("" + (1 + 1) * 30);
