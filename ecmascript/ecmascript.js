@@ -11,6 +11,7 @@ if (estaFrio) {
 var cpf = '123.456.789.98';
 // cpf = '997.345.432-66';
 console.log(cpf);
+//escopo de variáveis
 var segredo = 'externo';
 function revelar() {
     var segredo = 'interno';
@@ -27,4 +28,6 @@ console.log(segredo);
 for (var i = 0; i < 10; i++) {
     console.log(i);
 }
-console.log(i);
+// com o uso do let não é permitido acessar a variável de fora do escopo
+// com var o acesso ocorre sem problemas.
+// console.log(i);
