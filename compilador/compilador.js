@@ -1,4 +1,3 @@
-"use strict";
 var canal = 'Canal do Dev';
 console.log(canal);
 function soma(a, b) {
@@ -16,4 +15,3 @@ function saudar(isManha) {
         saudacao = 'Tenha uma boa vida!';
     return saudacao;
 }
-//# sourceMappingURL=compilador.js.map
