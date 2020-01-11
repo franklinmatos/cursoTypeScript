@@ -1,3 +1,4 @@
+"use strict";
 // Exercicio 1
 // const dobro = (valor: number): number => valor * 2;
 // console.log(dobro(10));
@@ -21,4 +22,5 @@
 // Exercicio 6
 // const cientista = { primeiroNome: "Will", experiencia: 12 }
 // const { primeiroNome, experiencia } = cientista
-// console.log(primeiroNome, experiencia) 
+// console.log(primeiroNome, experiencia)
+//# sourceMappingURL=desafioecma.js.map

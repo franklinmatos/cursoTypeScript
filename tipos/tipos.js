@@ -1,18 +1,18 @@
 "use strict";
 // boolean
-var variavel = false;
+let variavel = false;
 console.log('O valor da variavel boolean é: ' + variavel);
 // string
-var nome = 'O nome dela é Jenifer!!';
+let nome = 'O nome dela é Jenifer!!';
 console.log(nome);
 // se tentar inserir um valor inteiro numa variável string o compitador mesmo barra
 // nome = 1890+30
 // console.log(nome)
 // number
-var idade = 27;
+let idade = 27;
 console.log('A idade atribuida é: ' + idade);
 console.log(typeof idade);
-var hobbies = [
+let hobbies = [
     'Ler',
     'Correr',
     'Estudar',
@@ -25,12 +25,11 @@ var hobbies = [
     'Namorar',
 ];
 console.log(hobbies);
-for (var _i = 0, hobbies_1 = hobbies; _i < hobbies_1.length; _i++) {
-    var key = hobbies_1[_i];
+for (let key of hobbies) {
     console.log(key);
 }
 // tupla
-var tuple;
+let tuple;
 tuple = ['Franklin', 2019];
 console.log(tuple);
 // enum
@@ -49,7 +48,7 @@ var cor;
     cor["Green"] = "Cinza";
 })(cor || (cor = {}));
 console.log(cor.Red);
-var naoTenhoCerteza = 4;
+let naoTenhoCerteza = 4;
 console.log(naoTenhoCerteza);
 naoTenhoCerteza = 'maybe a string instead';
 console.log(naoTenhoCerteza);
@@ -72,7 +71,7 @@ function multiplicar(numA, numB) {
 console.log(multiplicar(10, 5));
 console.log(multiplicar(10.2, 5));
 // definição de objeto
-var pessoa = {
+let pessoa = {
     nome: 'Maria Antônia',
     idade: 26,
 };
@@ -90,9 +89,9 @@ console.log(pessoa);
             ->Ponto normal (<= 8)
             -> Fora do Horário (> 8)
 */
-var funcionario = {
+let funcionario = {
     supervisores: ['Ana', 'Paulo'],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         if (horario <= 8) {
             return 'Ponto Normal';
         }
@@ -104,9 +103,9 @@ var funcionario = {
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(10));
 console.log(funcionario.baterPonto(7));
-var novoFuncionario = {
+let novoFuncionario = {
     supervisores: ['Joana', 'Mário'],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         if (horario <= 8) {
             return 'Ponto Normal';
         }
@@ -119,7 +118,7 @@ console.log(novoFuncionario.supervisores);
 console.log(novoFuncionario.baterPonto(10));
 console.log(novoFuncionario.baterPonto(7));
 // union types
-var nota = 10;
+let nota = 10;
 console.log(nota);
 nota = 'nota 10';
 console.log(nota);
@@ -135,11 +134,11 @@ function falha(message) {
     throw new Error(message);
 }
 // gerando um excessão em alguma regra...
-var produto = {
+const produto = {
     id: 54,
     nome: 'Sabão em pó',
     preco: 10,
-    validarProduto: function () {
+    validarProduto() {
         if (!this.nome || this.nome.trim().length == 0) {
             falha('Produto Inválido');
         }
@@ -149,7 +148,7 @@ var produto = {
     },
 };
 produto.validarProduto();
-var contato1 = {
+let contato1 = {
     nome: 'Franklin M. Correia',
     idade: null,
     telefone: null,
@@ -157,17 +156,17 @@ var contato1 = {
 console.log(contato1);
 console.log(JSON.stringify(contato1));
 // ao se atribuir esse valor a variaval assume o tipo any
-var podeSerNulo = null;
+let podeSerNulo = null;
 console.log(podeSerNulo);
 console.log(typeof podeSerNulo);
 // desafio aula tipos
-var contaBancaria = {
+let contaBancaria = {
     saldo: 3456,
-    depositar: function (valor) {
+    depositar(valor) {
         this.saldo += valor;
     },
 };
-var correntista = {
+let correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
     contatos: ['34567890', '98765432'],

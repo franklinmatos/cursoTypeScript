@@ -1,33 +1,35 @@
+"use strict";
 // let & const
-var seraQuePode = '?';
+let seraQuePode = '?';
 console.log(seraQuePode);
 // variavel de escopo
-var estaFrio = true;
+let estaFrio = true;
 if (estaFrio) {
-    var acao = 'colocar o agasalho!';
+    let acao = 'colocar o agasalho!';
     console.log(acao);
 }
 // definindo uma constante e tentando alterar valor
-var cpf = '123.456.789.98';
+const cpf = '123.456.789.98';
 // cpf = '997.345.432-66';
 console.log(cpf);
 //escopo de variáveis
-var segredo = 'externo';
+let segredo = 'externo';
 function revelar() {
-    var segredo = 'interno';
+    let segredo = 'interno';
     console.log(segredo);
 }
 revelar();
 console.log(segredo);
 {
     {
-        var def = 'def';
+        const def = 'def';
         console.log(def);
     }
 }
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
     console.log(i);
 }
 // com o uso do let não é permitido acessar a variável de fora do escopo
 // com var o acesso ocorre sem problemas.
 // console.log(i);
+//# sourceMappingURL=ecmascript.js.map
