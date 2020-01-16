@@ -1,5 +1,1 @@
-arquivo de teste para a branch franklin_teste
-
-alteração de arquivo para testar o stash
-
-teste
+arquivo de teste para a branch desenvolvimento
