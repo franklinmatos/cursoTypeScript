@@ -4,7 +4,7 @@ node codigo.js
 
 para complitar as alterações pelo terminal, basta acessar a pasta onde o código está e digitar
 
-tsc codugo.js
+tsc codigo.js
 
 para configurar o servidor no projeto e poder executar o código pelo browser
 basta acessar o raiz do projeto e digitar: 
