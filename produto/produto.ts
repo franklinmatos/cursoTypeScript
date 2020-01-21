@@ -1,19 +1,18 @@
-class Produto{
-    
-    constructor(public nome: string, public  preco: number, public  desconto: number = 0 ){
+class Produto {
+
+    constructor(public nome: string, public preco: number, public desconto: number = 0) {
         this.nome = nome
         this.preco = preco
         this.desconto = desconto
     }
 
-    public  aplicarDesconto(): void {
+    public aplicarDesconto(): number {
         let valorDesconto: number = this.preco * this.desconto;
-        console.log(" Chamando a função aplicarDesconto.....")
-        console.log('O valor do produto ',this.nome, ' é R$: ',this.preco, ' e o valor com desconto é R$: ',valorDesconto);
+        return valorDesconto
     }
 
-    public resumo():string{
-        return `${this.nome} cusa R$${this.preco} (${this.desconto*100}% off)`
+    public resumo(): string {
+        return `${this.nome} custa R$${this.aplicarDesconto()} (${this.desconto * 100}% off)`
     }
 }
 
@@ -22,7 +21,7 @@ produto01.desconto = 0.06
 console.log("### Produto 01 ###");
 console.log(produto01);
 
-const produto02 = new Produto("Carderno Escolar",18.90,0.2);
+const produto02 = new Produto("Carderno Escolar", 18.90, 0.2);
 console.log("### Produto 02 ###");
 console.log(produto02);
 console.log("### Produto 02 Resumo ###");

@@ -10,11 +10,10 @@ class Produto {
     }
     aplicarDesconto() {
         let valorDesconto = this.preco * this.desconto;
-        console.log(" Chamando a função aplicarDesconto.....");
-        console.log('O valor do produto ', this.nome, ' é R$: ', this.preco, ' e o valor com desconto é R$: ', valorDesconto);
+        return valorDesconto;
     }
     resumo() {
-        return `${this.nome} cusa R$${this.preco} (${this.desconto * 100}% off)`;
+        return `${this.nome} custa R$${this.aplicarDesconto()} (${this.desconto * 100}% off)`;
     }
 }
 const produto01 = new Produto("Caneta Bic Preta", 0.2);
