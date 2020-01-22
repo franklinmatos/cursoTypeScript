@@ -18,4 +18,15 @@ pessoa1.idade = 35;
 console.log(pessoa1.idade);
 pessoa1.idade = 0;
 console.log(pessoa1.idade);
+// Atributos e métodos estáticos
+class Matematica {
+    static areaCirculo(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.1416;
+// const mi = new Matematica()
+// mi.PI = 4.2
+// console.log(mi.areaCirculo(4))
+console.log(Matematica.areaCirculo(4));
 //# sourceMappingURL=pessoa.js.map
