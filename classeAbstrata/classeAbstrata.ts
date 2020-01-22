@@ -28,4 +28,4 @@ console.log(c1.gerResultado())
 
 c1 = new Multiplicacao()
 c1.executar(3,75)
-console.log(c1.gerResultado())
+console.log('Resultado= ',c1.gerResultado())

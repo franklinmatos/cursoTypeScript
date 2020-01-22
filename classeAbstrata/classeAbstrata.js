@@ -23,5 +23,5 @@ c1.executar(2, 3, 4, 5);
 console.log(c1.gerResultado());
 c1 = new Multiplicacao();
 c1.executar(3, 75);
-console.log(c1.gerResultado());
+console.log('Resultado= ', c1.gerResultado());
 //# sourceMappingURL=classeAbstrata.js.map
