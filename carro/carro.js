@@ -6,6 +6,9 @@ class Carro {
         this.velocidadeMaxima = velocidadeMaxima;
         this.velocidadeAtual = 0;
     }
+    // private alterarVelocidadeMaxima(delta: number): number {
+    //alterado para protected para poder ser sobrescrito pelas classes que herdam de Carro
+    // como no exemplo abaixo da classe Ferrari
     alterarVelocidadeMaxima(delta) {
         const novaVelocidade = this.velocidadeAtual + delta;
         const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima;
@@ -24,9 +27,32 @@ class Carro {
         return this.alterarVelocidadeMaxima(-5);
     }
 }
-const carro1 = new Carro("Ford", "KA", 155);
+// const carro1 = new Carro("Ford", "KA", 155)
 // console.log("Velocidade ---> ", carro1.acelerar());
-Array(50).fill(0).forEach(() => (console.log("Acelerando Velocidade ---> ", carro1.acelerar())));
-// console.log("Desacelerando Velocidade ---> ", carro1.frear());
-Array(11).fill(0).forEach(() => (console.log("Desacelerando Velocidade ---> ", carro1.frear())));
+// Array(50).fill(0).forEach(() => (
+//     console.log("Acelerando Velocidade ---> ", carro1.acelerar())
+// ))
+// // console.log("Desacelerando Velocidade ---> ", carro1.frear());
+// Array(11).fill(0).forEach(() => (
+//     console.log("Desacelerando Velocidade ---> ", carro1.frear())
+// ))
+class Ferrari extends Carro {
+    constructor(modelo, velocidadeMaxima) {
+        super('Ferrari', modelo, velocidadeMaxima);
+    }
+    acelerar() {
+        return this.alterarVelocidadeMaxima(20);
+    }
+    frear() {
+        return this.alterarVelocidadeMaxima(-15);
+    }
+}
+const ferrari = new Ferrari('F40', 355);
+console.log(`${ferrari.marcar} ${ferrari.modelo}`);
+console.log('ACELERANDO ---> ', ferrari.acelerar());
+console.log('ACELERANDO ---> ', ferrari.acelerar());
+console.log('ACELERANDO ---> ', ferrari.acelerar());
+console.log('FREANDO <<======', ferrari.frear());
+console.log('FREANDO <<======', ferrari.frear());
+console.log('FREANDO <<======', ferrari.frear());
 //# sourceMappingURL=carro.js.map
