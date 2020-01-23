@@ -22,10 +22,29 @@ class Multiplicacao extends Calculo{
     }
 }
 
-let c1 = new Soma()
-c1.executar(2,3,4,5)
-console.log(c1.gerResultado())
+let c1 = new Soma();
+c1.executar(2, 3, 4, 5);
+console.log('Resultado = ', c1.gerResultado());
+c1 = new Multiplicacao();
+c1.executar(3, 75);
+console.log('Resultado = ', c1.gerResultado());
+//# sourceMappingURL=classeAbstrata.js.map
 
-c1 = new Multiplicacao()
-c1.executar(3,75)
-console.log('Resultado= ',c1.gerResultado())
+// aula construtor privado e singleton
+class Unico {
+    private static instance: Unico = new Unico
+    private constructor(){}
+
+    static getInstance():Unico{
+        return Unico.instance
+    }
+
+    agora(){
+        return new Date
+    }
+
+}
+
+// const errado = new Unico()
+//construtor privado não permide instanciar o objeto da classe
+console.log(Unico.getInstance().agora())
