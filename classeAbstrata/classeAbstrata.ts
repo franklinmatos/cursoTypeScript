@@ -48,3 +48,24 @@ class Unico {
 // const errado = new Unico()
 //construtor privado não permide instanciar o objeto da classe
 console.log(Unico.getInstance().agora())
+
+
+// Aula atributos somente leitura
+
+class Aviao {
+ public readonly modelo: string
+ constructor(modelo: string,
+    public readonly prefixo: string){
+        this.modelo = modelo
+    }
+}
+
+const turboHelice = new Aviao('Tu-114','PT-ABC')
+// console.log(turboHelice)
+
+// forma errada, vai gerar um erro na própria IDE
+// turboHelice.modelo = 'DC-80'
+// turboHelice.prefixo = 'PT-PRF'
+// com o modelo apenas leitura não permite que seja alterado os valores dos atributos que 
+// são somente leitura gerando erro na ide porém exibe o resultado com a alteração
+console.log(turboHelice)
