@@ -7,8 +7,9 @@
   <title>TypeScript Curso</title>
 </head>
 
- <body>
-<!--  <script src="/introducao/Basico/basico.js"></script>
+<body>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <!--  <script src="/introducao/Basico/basico.js"></script>
   <script src="/tipos/tipos.js"></script>
   <script src="/compilador/compilador.js"></script>
   <script src="/ecmascript/ecmascript.js"></script>
@@ -24,7 +25,19 @@
   <script src="/namespace/geometriaCirc.js"></script>
   <script src="/namespace/geometriaRect.js"></script>
   <script src="/namespace/namespace.js"></script>
-  <script src="/modulos/modulos.js"></script>
+  <!-- <script src="/modulos/modulos.js"></script> -->
+
+  <script>
+    SystemJS.config({
+      baseUrl: '/modulos',
+      packages: {
+        'modulos': {
+          defaultJSExtension: true
+        }
+      }
+    })
+    SystemJS.import('./modulos/modulos.js')
+  </script>
 </body>
 
 </html>
