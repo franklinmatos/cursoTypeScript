@@ -1,6 +1,6 @@
 "use strict";
 function saudarComOla(pessoa) {
-    console.log(pessoa.nome);
+    console.log('Olá: ' + pessoa.nome);
 }
 function mudarNome(pessoa) {
     pessoa.nome = 'Joana';
@@ -12,4 +12,6 @@ const pessoaTeste = {
 saudarComOla(pessoaTeste);
 mudarNome(pessoaTeste);
 saudarComOla(pessoaTeste);
+saudarComOla({ nome: 'Jonas', idade: 27 });
+saudarComOla({ nome: 'Adriana', idade: 25, altura: 1.85 });
 //# sourceMappingURL=interfaces.js.map
