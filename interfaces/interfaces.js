@@ -18,4 +18,18 @@ saudarComOla(pessoaTeste);
 // saudarComOla({nome: 'Jonas',idade: 27})
 // saudarComOla({nome: 'Adriana',idade: 25, altura: 1.85})
 pessoaTeste.saudar('Skywalker');
+//implementando interfaces
+class Cliente {
+    constructor() {
+        this.nome = '';
+    }
+    saudar(sobrenome) {
+        console.log('Ola, meu nome é ' +
+            this.nome + ' ' + sobrenome);
+    }
+}
+const meuCliente = new Cliente();
+meuCliente.nome = 'Han';
+saudarComOla(meuCliente);
+meuCliente.saudar('Solo');
 //# sourceMappingURL=interfaces.js.map
