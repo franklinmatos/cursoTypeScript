@@ -40,4 +40,22 @@ potencia = function (base, exp) {
     return Math.pow(base, exp);
 };
 console.log(potencia(2, 10));
+console.log(Math.pow(2, 10));
+console.log(Math.pow(2, 10));
+class RealA {
+    a() { }
+}
+class RealAB {
+    a() { }
+    b() { }
+}
+class RealABC {
+    c() { }
+    a() { }
+    b() { }
+}
+class AbstradaABD {
+    a() { }
+    b() { }
+}
 //# sourceMappingURL=interfaces.js.map
