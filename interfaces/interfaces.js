@@ -40,4 +40,38 @@ potencia = function (base, exp) {
     return Math.pow(base, exp);
 };
 console.log(potencia(2, 10));
+console.log(Math.pow(2, 10));
+console.log(Math.pow(2, 10));
+class RealA {
+    a() { }
+}
+class RealAB {
+    a() { }
+    b() { }
+}
+class RealABC {
+    c() { }
+    a() { }
+    b() { }
+}
+class AbstradaABD {
+    a() { }
+    b() { }
+}
+Object.prototype.log = function () {
+    console.log(this.toString());
+};
+const numero1 = 21;
+const numero2 = 22;
+const numero3 = 33;
+numero1.log();
+numero2.log();
+numero3.log();
+const cli = {
+    nome: 'Pedro',
+    toString() {
+        return this.nome;
+    }
+};
+console.log(cli.toString());
 //# sourceMappingURL=interfaces.js.map

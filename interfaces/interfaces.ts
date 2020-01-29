@@ -62,3 +62,64 @@ potencia = function (base: number, exp: number): number {
 }
 
 console.log(potencia(2, 10))
+console.log(Math.pow(2, 10))
+console.log(2 ** 10)
+
+//aula sobre interfaces
+interface A {
+    a(): void
+}
+
+interface B {
+    b(): void
+}
+
+interface ABC extends A, B {
+    c(): void
+}
+class RealA implements A {
+    a(): void { }
+}
+
+class RealAB implements A, B {
+    a(): void { }
+    b(): void { }
+}
+class RealABC implements ABC {
+    c(): void { }
+    a(): void { }
+    b(): void { }
+}
+
+abstract class AbstradaABD implements A, B {
+    a(): void { }
+    b(): void { }
+    abstract d(): void
+
+}
+
+interface Object {
+    log(): void
+}
+
+Object.prototype.log = function () {
+
+    console.log(this.toString())
+
+}
+
+const numero1 = 21
+const numero2 = 22
+const numero3 = 33
+
+numero1.log()
+numero2.log()
+numero3.log()
+
+const cli = {
+    nome: 'Pedro',
+    toString() {
+        return this.nome
+    }
+}
+console.log(cli.toString())
