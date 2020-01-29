@@ -47,3 +47,18 @@ const meuCliente = new Cliente()
 meuCliente.nome = 'Han'
 saudarComOla(meuCliente)
 meuCliente.saudar('Solo')
+
+//interface de função
+interface FuncaoCalculo {
+    (a: number, c: number): number
+}
+
+let potencia: FuncaoCalculo
+potencia = function (base: number, exp: number): number {
+    // essas 2 formas geram o mesmo resultado
+    //  return Math.pow(base,exp)
+    //return base**exp
+    return Math.pow(base, exp)
+}
+
+console.log(potencia(2, 10))
