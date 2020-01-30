@@ -41,12 +41,16 @@ class OperacaoBinaria {
         this.operando1 = operando1;
         this.operando2 = operando2;
     }
+}
+// console.log(new OperacaoBinaria('Bom ','Dia').executar())
+// console.log(new OperacaoBinaria(3,7).executar())
+// console.log(new OperacaoBinaria(3,' - Opa').executar())
+// console.log(new OperacaoBinaria({},{}).executar())
+class SomaBinaria extends OperacaoBinaria {
     executar() {
         return this.operando1 + this.operando2;
     }
 }
-console.log(new OperacaoBinaria('Bom ', 'Dia').executar());
-console.log(new OperacaoBinaria(3, 7).executar());
-console.log(new OperacaoBinaria(3, ' - Opa').executar());
-console.log(new OperacaoBinaria({}, {}).executar());
+console.log(new SomaBinaria(3, 7).executar());
+console.log(new SomaBinaria(1, 3).executar());
 //# sourceMappingURL=generics.js.map

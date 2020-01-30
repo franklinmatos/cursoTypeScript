@@ -53,16 +53,24 @@ imprimir<Aluno>(
 
 
 // Class com Generics
-class OperacaoBinaria {
-    constructor(public operando1: any,
-        public operando2: any){}
+abstract class OperacaoBinaria<T, R> {
+    constructor(public operando1: T,
+        public operando2: T){}
     
-    executar(){
-        return this.operando1 + this.operando2
-    }    
+    abstract executar(): R
 }
 
-console.log(new OperacaoBinaria('Bom ','Dia').executar())
-console.log(new OperacaoBinaria(3,7).executar())
-console.log(new OperacaoBinaria(3,' - Opa').executar())
-console.log(new OperacaoBinaria({},{}).executar())
+// console.log(new OperacaoBinaria('Bom ','Dia').executar())
+// console.log(new OperacaoBinaria(3,7).executar())
+// console.log(new OperacaoBinaria(3,' - Opa').executar())
+// console.log(new OperacaoBinaria({},{}).executar())
+
+class SomaBinaria extends OperacaoBinaria<number,number>{
+    executar(): number {
+        return this.operando1 + this.operando2
+    }
+    
+}
+
+console.log(new SomaBinaria(3,7).executar())
+console.log(new SomaBinaria(1,3).executar())
