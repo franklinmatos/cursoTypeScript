@@ -35,4 +35,69 @@ imprimir([
     { nome: 'Antonio', idade: 33 },
     { nome: 'José', idade: 44 }
 ]);
+// Class com Generics
+class OperacaoBinaria {
+    constructor(operando1, operando2) {
+        this.operando1 = operando1;
+        this.operando2 = operando2;
+    }
+}
+// console.log(new OperacaoBinaria('Bom ','Dia').executar())
+// console.log(new OperacaoBinaria(3,7).executar())
+// console.log(new OperacaoBinaria(3,' - Opa').executar())
+// console.log(new OperacaoBinaria({},{}).executar())
+class SomaBinaria extends OperacaoBinaria {
+    executar() {
+        return this.operando1 + this.operando2;
+    }
+}
+console.log(new SomaBinaria(3, 7).executar());
+console.log(new SomaBinaria(1, 3).executar());
+class DiferencaEntreData extends OperacaoBinaria {
+    getTime(data) {
+        let { dia, mes, ano } = data;
+        return new Date(`${mes}/${dia}/${ano}`).getTime();
+    }
+    executar() {
+        const t1 = this.getTime(this.operando1);
+        const t2 = this.getTime(this.operando2);
+        const diferenca = Math.abs(t1 - t2);
+        const dia = 1000 * 60 * 60 * 24; //1 dia em milisegundos
+        return `${Math.ceil(diferenca / dia)} dia(s)`;
+    }
+}
+// const d1 = new Data(1,2,2020)
+// const d2 = new Data(3,2,2020)
+// console.log(new DiferencaEntreData(d1,d2))
+// Desafio Classe Fila
+// Atributo: fila (Array)
+// Métodos: entrar, proximo, imprimir
+class Fila {
+    constructor(...args) {
+        this.fila = args;
+    }
+    entrar(elemento) {
+        this.fila.push(elemento);
+    }
+    proximo() {
+        const primeiro = this.fila[0];
+        this.fila.splice(0, 1);
+        return primeiro;
+    }
+    imprimir() {
+        console.log(this.fila);
+    }
+}
+const fila = new Fila('Gui', 'Pedro', 'Ana', 'Lu', 'João', 'Mel', 'Bernardo');
+fila.imprimir();
+fila.proximo();
+fila.imprimir();
+fila.entrar('Maria');
+fila.imprimir();
+fila.proximo();
+fila.imprimir();
+fila.proximo();
+fila.imprimir();
+fila.proximo();
+fila.imprimir();
 //# sourceMappingURL=generics.js.map
