@@ -35,4 +35,18 @@ imprimir([
     { nome: 'Antonio', idade: 33 },
     { nome: 'José', idade: 44 }
 ]);
+// Class com Generics
+class OperacaoBinaria {
+    constructor(operando1, operando2) {
+        this.operando1 = operando1;
+        this.operando2 = operando2;
+    }
+    executar() {
+        return this.operando1 + this.operando2;
+    }
+}
+console.log(new OperacaoBinaria('Bom ', 'Dia').executar());
+console.log(new OperacaoBinaria(3, 7).executar());
+console.log(new OperacaoBinaria(3, ' - Opa').executar());
+console.log(new OperacaoBinaria({}, {}).executar());
 //# sourceMappingURL=generics.js.map
