@@ -99,7 +99,7 @@ class DiferencaEntreData extends OperacaoBinaria<Data,string>{
 // Atributo: fila (Array)
 // Métodos: entrar, proximo, imprimir
 
-class Fila<T>{
+class Fila<T extends number | string>{
     private fila: Array<T>
 
     constructor(...args: T[]){
@@ -138,5 +138,5 @@ fila.imprimir()
 const outraFila = new Fila<number>(1,2,3)
 outraFila.imprimir()
 
-const novaFila = new Fila<boolean>(true,false,true,false,false)
-novaFila.imprimir()
+// const novaFila = new Fila<boolean>(true,false,true,false,false)
+// novaFila.imprimir()
