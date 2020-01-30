@@ -18,4 +18,21 @@ const avaliacoes = [10, 7, 6];
 avaliacoes.push(8.8);
 // avaliacoes.push('5.5') assim que eu coloquei o tipo no array a string 5.5 foi invalidada pela API
 console.log(avaliacoes);
+//funções
+function imprimir(args) {
+    args.forEach(element => (console.log(element)));
+}
+imprimir([1, 2, 3]);
+imprimir([4, 5, 6]);
+imprimir(['Ana', 'João', 'Maria']);
+imprimir([
+    { nome: 'Carlos', idade: 22 },
+    { nome: 'Antonio', idade: 33 },
+    { nome: 'José', idade: 44 }
+]);
+imprimir([
+    { nome: 'Carlos', idade: 22 },
+    { nome: 'Antonio', idade: 33 },
+    { nome: 'José', idade: 44 }
+]);
 //# sourceMappingURL=generics.js.map

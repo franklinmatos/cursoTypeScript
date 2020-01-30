@@ -22,5 +22,31 @@ console.log(echoMelhorado({ nome: 'João', idade: 27 }))
 const avaliacoes: Array<number> = [10, 7, 6]
 avaliacoes.push(8.8)
 // avaliacoes.push('5.5') assim que eu coloquei o tipo no array a string 5.5 foi invalidada pela API
-
 console.log(avaliacoes)
+
+//funções
+function imprimir<T>(args: T[]) {
+    args.forEach(element => (console.log(element)))
+}
+
+imprimir([1, 2, 3])
+imprimir<number>([4, 5, 6])
+imprimir<string>(['Ana', 'João', 'Maria'])
+imprimir<{ nome: string, idade: number }>(
+    [
+        { nome: 'Carlos', idade: 22 },
+        { nome: 'Antonio', idade: 33 },
+        { nome: 'José', idade: 44 }
+    ]
+)
+
+type Aluno = {
+    nome: string, idade: number
+}
+imprimir<Aluno>(
+    [
+        { nome: 'Carlos', idade: 22 },
+        { nome: 'Antonio', idade: 33 },
+        { nome: 'José', idade: 44 }
+    ]
+)
