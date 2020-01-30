@@ -124,13 +124,19 @@ class Fila<T>{
 
 const fila = new Fila<string>('Gui','Pedro','Ana','Lu','João','Mel','Bernardo')
 fila.imprimir()
-fila.proximo()
+console.log(fila.proximo())
 fila.imprimir()
 fila.entrar('Maria')
 fila.imprimir()
-fila.proximo()
+console.log(fila.proximo())
 fila.imprimir()
-fila.proximo()
+console.log(fila.proximo())
 fila.imprimir()
-fila.proximo()
+console.log(fila.proximo())
 fila.imprimir()
+
+const outraFila = new Fila<number>(1,2,3)
+outraFila.imprimir()
+
+const novaFila = new Fila<boolean>(true,false,true,false,false)
+novaFila.imprimir()

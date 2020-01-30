@@ -90,14 +90,18 @@ class Fila {
 }
 const fila = new Fila('Gui', 'Pedro', 'Ana', 'Lu', 'João', 'Mel', 'Bernardo');
 fila.imprimir();
-fila.proximo();
+console.log(fila.proximo());
 fila.imprimir();
 fila.entrar('Maria');
 fila.imprimir();
-fila.proximo();
+console.log(fila.proximo());
 fila.imprimir();
-fila.proximo();
+console.log(fila.proximo());
 fila.imprimir();
-fila.proximo();
+console.log(fila.proximo());
 fila.imprimir();
+const outraFila = new Fila(1, 2, 3);
+outraFila.imprimir();
+const novaFila = new Fila(true, false, true, false, false);
+novaFila.imprimir();
 //# sourceMappingURL=generics.js.map
