@@ -55,8 +55,8 @@ imprimir<Aluno>(
 // Class com Generics
 abstract class OperacaoBinaria<T, R> {
     constructor(public operando1: T,
-        public operando2: T){}
-    
+        public operando2: T) { }
+
     abstract executar(): R
 }
 
@@ -65,30 +65,30 @@ abstract class OperacaoBinaria<T, R> {
 // console.log(new OperacaoBinaria(3,' - Opa').executar())
 // console.log(new OperacaoBinaria({},{}).executar())
 
-class SomaBinaria extends OperacaoBinaria<number,number>{
+class SomaBinaria extends OperacaoBinaria<number, number>{
     executar(): number {
         return this.operando1 + this.operando2
     }
-    
+
 }
 
-console.log(new SomaBinaria(3,7).executar())
-console.log(new SomaBinaria(1,3).executar())
+console.log(new SomaBinaria(3, 7).executar())
+console.log(new SomaBinaria(1, 3).executar())
 
-class DiferencaEntreData extends OperacaoBinaria<Data,string>{
+class DiferencaEntreData extends OperacaoBinaria<Data, string>{
     getTime(data: Data): number {
-        let {dia,mes,ano} = data
+        let { dia, mes, ano } = data
         return new Date(`${mes}/${dia}/${ano}`).getTime()
     }
-    
+
     executar(): string {
         const t1 = this.getTime(this.operando1)
         const t2 = this.getTime(this.operando2)
         const diferenca = Math.abs(t1 - t2)
         const dia = 1000 * 60 * 60 * 24 //1 dia em milisegundos
-        return `${Math.ceil(diferenca/dia)} dia(s)`
+        return `${Math.ceil(diferenca / dia)} dia(s)`
     }
-    
+
 }
 
 // const d1 = new Data(1,2,2020)
@@ -102,27 +102,27 @@ class DiferencaEntreData extends OperacaoBinaria<Data,string>{
 class Fila<T extends number | string>{
     private fila: Array<T>
 
-    constructor(...args: T[]){
+    constructor(...args: T[]) {
         this.fila = args
     }
 
-    entrar(elemento: T){
+    entrar(elemento: T) {
         this.fila.push(elemento)
     }
 
-    proximo(): T{
+    proximo(): T {
         const primeiro = this.fila[0]
-        this.fila.splice(0,1)
+        this.fila.splice(0, 1)
         return primeiro
     }
 
-    imprimir(){
+    imprimir() {
         console.log(this.fila)
     }
 
 }
 
-const fila = new Fila<string>('Gui','Pedro','Ana','Lu','João','Mel','Bernardo')
+const fila = new Fila<string>('Gui', 'Pedro', 'Ana', 'Lu', 'João', 'Mel', 'Bernardo')
 fila.imprimir()
 console.log(fila.proximo())
 fila.imprimir()
@@ -135,8 +135,24 @@ fila.imprimir()
 console.log(fila.proximo())
 fila.imprimir()
 
-const outraFila = new Fila<number>(1,2,3)
+const outraFila = new Fila<number>(1, 2, 3)
 outraFila.imprimir()
 
 // const novaFila = new Fila<boolean>(true,false,true,false,false)
 // novaFila.imprimir()
+
+// Desafio Mapa
+// Array de Objetos (Chave/Valor) -> itens
+// Métodos: obter(Chave), colocar({ C, V })
+// limpar(), imprimir()
+
+const mapa = new Mapa<number, string>()
+mapa.colocar({ chave: 1, valor: 'Pedro' })
+mapa.colocar({ chave: 2, valor: 'Rebeca' })
+mapa.colocar({ chave: 3, valor: 'Maria' })
+mapa.colocar({ chave: 1, valor: 'Gustavo' })
+
+console.log(mapa.obter(2))
+mapa.imprimir()
+mapa.limpar()
+mapa.imprimir()
