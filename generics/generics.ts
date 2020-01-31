@@ -122,21 +122,21 @@ class Fila<T extends number | string>{
 
 }
 
-const fila = new Fila<string>('Gui', 'Pedro', 'Ana', 'Lu', 'João', 'Mel', 'Bernardo')
-fila.imprimir()
-console.log(fila.proximo())
-fila.imprimir()
-fila.entrar('Maria')
-fila.imprimir()
-console.log(fila.proximo())
-fila.imprimir()
-console.log(fila.proximo())
-fila.imprimir()
-console.log(fila.proximo())
-fila.imprimir()
+// const fila = new Fila<string>('Gui', 'Pedro', 'Ana', 'Lu', 'João', 'Mel', 'Bernardo')
+// fila.imprimir()
+// console.log(fila.proximo())
+// fila.imprimir()
+// fila.entrar('Maria')
+// fila.imprimir()
+// console.log(fila.proximo())
+// fila.imprimir()
+// console.log(fila.proximo())
+// fila.imprimir()
+// console.log(fila.proximo())
+// fila.imprimir()
 
-const outraFila = new Fila<number>(1, 2, 3)
-outraFila.imprimir()
+// const outraFila = new Fila<number>(1, 2, 3)
+// outraFila.imprimir()
 
 // const novaFila = new Fila<boolean>(true,false,true,false,false)
 // novaFila.imprimir()
@@ -145,6 +145,35 @@ outraFila.imprimir()
 // Array de Objetos (Chave/Valor) -> itens
 // Métodos: obter(Chave), colocar({ C, V })
 // limpar(), imprimir()
+type Par<C,V> = { chave: C, valor: V }
+class Mapa<C,V>{
+    itens: Array< Par<C,V> > = new Array< Par<C,V> >()
+    
+    obter(chave: C): Par<C,V> | null{
+        const resultado = this.itens
+        .filter(i => i.chave ===chave)
+        return resultado ? resultado[0] : null
+
+    }
+
+    colocar(par: Par<C,V>){
+        const encontrado = this.obter(par.chave)
+        if(encontrado){
+            encontrado.valor = par.valor
+        }else{
+            this.itens.push(par)
+        }
+    }
+
+    imprimir(){
+        console.log(this.itens)
+    }
+
+    limpar(){
+        this.itens = new Array< Par<C,V> >()
+
+    }
+}
 
 const mapa = new Mapa<number, string>()
 mapa.colocar({ chave: 1, valor: 'Pedro' })

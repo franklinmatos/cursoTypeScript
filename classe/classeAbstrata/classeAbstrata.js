@@ -27,8 +27,7 @@ console.log('Resultado = ', c1.gerResultado());
 //# sourceMappingURL=classeAbstrata.js.map
 // aula construtor privado e singleton
 class Unico {
-    constructor() {
-    }
+    constructor() { }
     static getInstance() {
         return Unico.instance;
     }
